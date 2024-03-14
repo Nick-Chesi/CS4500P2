@@ -3,12 +3,12 @@
 // Header files ^
 
 int init_module(void){
-        printk(KERN_INF() "HELLO WORLD! \n");
+        printk(KERN_INFO "HELLO WORLD! \n");
         return 0;
 }
 
 void cleanup_module(void){
-        printk(KERN_INF() "GOODBYE WORLD! \n");
+        printk(KERN_INFO "GOODBYE WORLD! \n");
 }
 
 module_init(init_module);
