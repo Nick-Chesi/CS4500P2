@@ -29,3 +29,33 @@ Part 2:
 [Sat Mar 16 10:59:28 2024] Process: swapper/0 PID: 0 State: 0
 [Sat Mar 16 11:00:18 2024] LEAVING THE PART 2 MODULE!
 ==== OUTPUT FROM dmesg -T | tail ====
+
+Part 3:
+==== OUTPUT FROM dmesg -T | tail ====
+[root@mycentos part3]# pgrep bash
+4608
+[root@mycentos part3]# insmod part3.ko target_pid=4608
+[root@mycentos part3]# dmesg -T | tail
+[Sat Mar 16 11:43:25 2024] Process Name: sshd
+[Sat Mar 16 11:43:25 2024] PID: 4600
+[Sat Mar 16 11:43:25 2024] Process State: 1
+[Sat Mar 16 11:43:25 2024] Process Name: sshd
+[Sat Mar 16 11:43:25 2024] PID: 1045
+[Sat Mar 16 11:43:25 2024] Process State: 1
+[Sat Mar 16 11:43:25 2024] Process Name: systemd
+[Sat Mar 16 11:43:25 2024] PID: 1
+[Sat Mar 16 11:43:25 2024] Process State: 1
+[Sat Mar 16 11:43:25 2024] Process: swapper/0, PID: 0, State: 0
+[root@mycentos part3]# rmmod part3
+[root@mycentos part3]# dmesg -T | tail
+[Sat Mar 16 11:43:25 2024] PID: 4600
+[Sat Mar 16 11:43:25 2024] Process State: 1
+[Sat Mar 16 11:43:25 2024] Process Name: sshd
+[Sat Mar 16 11:43:25 2024] PID: 1045
+[Sat Mar 16 11:43:25 2024] Process State: 1
+[Sat Mar 16 11:43:25 2024] Process Name: systemd
+[Sat Mar 16 11:43:25 2024] PID: 1
+[Sat Mar 16 11:43:25 2024] Process State: 1
+[Sat Mar 16 11:43:25 2024] Process: swapper/0, PID: 0, State: 0
+[Sat Mar 16 11:44:43 2024] GOODBYE FROM PART 3!
+==== OUTPUT FROM dmesg -T | tail ====
