@@ -2,6 +2,7 @@ If so, how to fix the error (5pts), with the makefile I had to remove unnecessar
 Also had to install elfutils-libelf-devel as libelf-dev did not exist.
 
 
+Part 1:
 ==== OUTPUT FROM dmesg -T | tail ====
 [Thu Mar 14 19:57:44 2024] ip_set: protocol 7
 [Thu Mar 14 19:57:45 2024] nf_conntrack version 0.5.0 (16384 buckets, 65536 max)
@@ -13,4 +14,18 @@ Also had to install elfutils-libelf-devel as libelf-dev did not exist.
 [Fri Mar 15 16:08:05 2024] hello: module verification failed: signature and/or required key missing - tainting kernel
 [Fri Mar 15 16:08:05 2024] HELLO WORLD!
 [Fri Mar 15 16:08:28 2024] GOODBYE WORLD!
+==== OUTPUT FROM dmesg -T | tail ====
+
+Part 2:
+==== OUTPUT FROM dmesg -T | tail ====
+[root@mycentos part2]# dmesg -T | tail State: 1
+[Sat Mar 16 10:59:29 2024] Process: sshd PID: 1045 State: 1
+[Sat Mar 16 10:59:29 2024] Process: systems PID: 1 State: 1
+[Sat Mar 16 10:59:29 2024] Process: swapper/0 PID: 0 State: 0
+[root@mycentos part2]# rmmod part2
+[root@mycentos part2]# dmesg -T | tail
+[Sat Mar 16 10:59:28 2024] Process: sshd PID: 1045 State: 1
+[Sat Mar 16 10:59:28 2024] Process: systems PID: 1 State: 1
+[Sat Mar 16 10:59:28 2024] Process: swapper/0 PID: 0 State: 0
+[Sat Mar 16 11:00:18 2024] LEAVING THE PART 2 MODULE!
 ==== OUTPUT FROM dmesg -T | tail ====
