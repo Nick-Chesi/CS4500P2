@@ -1,3 +1,9 @@
+Resources:
+https://sysprog21.github.io/lkmpg/
+https://tldp.org/LDP/lkmpg/2.4/html/x354.htm
+https://www.kernel.org/doc/html/next/core-api/printk-basics.html
+
+
 If so, how to fix the error (5pts), with the makefile I had to remove unnecessary spaces to make the makefile work.
 Also had to install elfutils-libelf-devel as libelf-dev did not exist.
 
