@@ -11,11 +11,11 @@ int printSelfInit(){
 
         // Iterate through the current process and its parents until init process
         for(task = current; task != &init_task; task = task->real_parent){
-                printk(KERN_INFO "Process: %s\nPID: %d\nState: %ld\n", task->comm, task->pid, task->state);
+                printk(KERN_INFO "Process: %s PID: %d State: %ld\n", task->comm, task->pid, task->state);
         }
 
         // Print information about the init process
-        printk(KERN_INFO "Process: %s\nPID: %d\nState: %ld\n", init_task.comm, init_task.pid, init_task.state);
+        printk(KERN_INFO "Process: %s PID: %d State: %ld\n", init_task.comm, init_task.pid, init_task.state);
 
         return 0;
 }
