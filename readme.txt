@@ -1,9 +1,45 @@
+NAME OF PROJECT: Project 2: Kernel Module and Processes
+================
+MEMBERS: Cole Bennet
+========
+STATEMENT:
+==========
+We have neither given nor received unauthorized assistance on this work.
+VIRTUAL MACHINE (VM) INFORMATION:
+=================================
+NAME OF VIRTUAL MACHINE (VM): nchesi -> nchesi-vm
+USERNAME: root
+PASSWORD: 1234!@#$
+Describe where the files can be found.
+Part 1: /home/nchesi/project2
+Part 2: /home/nchesi/project2/part2
+Part 3: /home/nchesi/project2/part3
+Describe each file and the purpose it serves.
+===============================================================
+Under each part, there are the follow files:
+hello.c (will be named differently for each part)
+hello.ko -> 
+hello.mod.c -> Kernel module, c program
+hello.mod.o -> Kernel module, binary 
+hello.o -> binary
+Makefile
+modules.order
+Module.symvers
+===============================================================
+Provide any special instructions to access or run your program.
+ROOT PASSWORD: 1234!@#$
+==============
+DESCRIPTION AND REMEDIATION: 
+============================
+
+
+
 Resources:
 https://sysprog21.github.io/lkmpg/
 https://tldp.org/LDP/lkmpg/2.4/html/x354.htm
 https://www.kernel.org/doc/html/next/core-api/printk-basics.html
 
-
+Provided Makefile errors:
 If so, how to fix the error (5pts), with the makefile I had to remove unnecessary spaces to make the makefile work.
 Also had to install elfutils-libelf-devel as libelf-dev did not exist.
 
