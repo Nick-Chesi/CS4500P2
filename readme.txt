@@ -1,12 +1,13 @@
+===============================================================
 NAME OF PROJECT: Project 2: Kernel Module and Processes
-================
-MEMBERS: Cole Bennet
-========
+===============================================================
+MEMBERS: Cole Bennett, Nicholas Chesi
+===============================================================
 STATEMENT:
-==========
+===============================================================
 We have neither given nor received unauthorized assistance on this work.
 VIRTUAL MACHINE (VM) INFORMATION:
-=================================
+===============================================================
 NAME OF VIRTUAL MACHINE (VM): nchesi -> nchesi-vm
 USERNAME: root
 PASSWORD: 1234!@#$
@@ -18,32 +19,33 @@ Describe each file and the purpose it serves.
 ===============================================================
 Under each part, there are the follow files:
 hello.c (will be named differently for each part)
-hello.ko -> 
-hello.mod.c -> Kernel module, c program
-hello.mod.o -> Kernel module, binary 
-hello.o -> binary
-Makefile
-modules.order
-Module.symvers
+hello.ko -> Kernel device driver file.
+hello.mod.c -> Kernel module, c program.
+hello.mod.o -> Kernel module, object file.
+hello.o -> Object file for hello.c.
+Makefile -> Used to make all the previous files, uses gcc to compile the c code, has a clean function to remove files.
+modules.order -> This seems to be a linker optimization technique.
+Module.symvers -> This file is generated during a kernel build when we insert the module, and it contains all exported symbols from the kernel and compiled modules.
 ===============================================================
 Provide any special instructions to access or run your program.
 ROOT PASSWORD: 1234!@#$
-==============
+===============================================================
 DESCRIPTION AND REMEDIATION: 
-============================
+===============================================================
+Provided Makefile errors:
+If so, how to fix the error (5pts), with the makefile I had to remove unnecessary spaces to make the makefile work.
+Also had to install elfutils-libelf-devel as libelf-dev did not exist.
+===============================================================
+QUESTIONS:
+===============================================================
 
-
-
+===============================================================
 Resources:
 https://sysprog21.github.io/lkmpg/
 https://tldp.org/LDP/lkmpg/2.4/html/x354.htm
 https://www.kernel.org/doc/html/next/core-api/printk-basics.html
 
-Provided Makefile errors:
-If so, how to fix the error (5pts), with the makefile I had to remove unnecessary spaces to make the makefile work.
-Also had to install elfutils-libelf-devel as libelf-dev did not exist.
-
-
+===============================================================
 Part 1:
 ==== OUTPUT FROM dmesg -T | tail ====
 [Thu Mar 14 19:57:44 2024] ip_set: protocol 7
@@ -57,7 +59,7 @@ Part 1:
 [Fri Mar 15 16:08:05 2024] HELLO WORLD!
 [Fri Mar 15 16:08:28 2024] GOODBYE WORLD!
 ==== OUTPUT FROM dmesg -T | tail ====
-
+===============================================================
 Part 2:
 ==== OUTPUT FROM dmesg -T | tail ====
 [root@mycentos part2]# dmesg -T | tail State: 1
@@ -71,7 +73,7 @@ Part 2:
 [Sat Mar 16 10:59:28 2024] Process: swapper/0 PID: 0 State: 0
 [Sat Mar 16 11:00:18 2024] LEAVING THE PART 2 MODULE!
 ==== OUTPUT FROM dmesg -T | tail ====
-
+===============================================================
 Part 3:
 ==== OUTPUT FROM dmesg -T | tail ====
 [root@mycentos part3]# pgrep bash
@@ -101,3 +103,4 @@ Part 3:
 [Sat Mar 16 11:43:25 2024] Process: swapper/0, PID: 0, State: 0
 [Sat Mar 16 11:44:43 2024] GOODBYE FROM PART 3!
 ==== OUTPUT FROM dmesg -T | tail ====
+===============================================================
